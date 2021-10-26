@@ -14,7 +14,8 @@ defmodule Storeql.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Storeql.PubSub},
       # Start the Endpoint (http/https)
-      StoreqlWeb.Endpoint
+      StoreqlWeb.Endpoint,
+      {Storeql.Choices.Workers.ConsumeProductsFromKafka, []}
       # Start a worker by calling: Storeql.Worker.start_link(arg)
       # {Storeql.Worker, arg}
     ]
